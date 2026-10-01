@@ -14,12 +14,9 @@
 cask "neurosquad" do
   arch arm: "arm64", intel: "x64"
 
-  # placeholder: removed by homebrew-cask.mjs
-  disable! date: "2026-09-30", because: "has no macOS release yet (see https://neurosquad.ai/download)"
-
-  version "0.0.0"
-  sha256 arm:   "0000000000000000000000000000000000000000000000000000000000000000",
-         intel: "0000000000000000000000000000000000000000000000000000000000000000"
+  version "0.1.214"
+  sha256 arm:   "8b02ebaf69a5700a669996dd4d52de818ab0ac55895b2500a79a7ef80763fb30",
+         intel: "bd2bd564192b294977fb5fc1030226dc6d6d24748870af0926f472b3adf43db3"
 
   url "https://github.com/glmn-ai/neurosquad-releases/releases/download/v#{version}/NeuroSquad-#{version}-#{arch}.zip",
       verified: "github.com/glmn-ai/neurosquad-releases/"
@@ -34,7 +31,7 @@ cask "neurosquad" do
 
   # The app updates itself (main/updater.ts, main/macUpdate.ts).
   auto_updates true
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "NeuroSquad.app"
 
