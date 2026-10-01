@@ -14,9 +14,9 @@
 cask "neurosquad" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.1.214"
-  sha256 arm:   "8b02ebaf69a5700a669996dd4d52de818ab0ac55895b2500a79a7ef80763fb30",
-         intel: "bd2bd564192b294977fb5fc1030226dc6d6d24748870af0926f472b3adf43db3"
+  version "0.1.218"
+  sha256 arm:   "bbbfd81f0c2bf3e896c71edeba174f41238e642ee11d44c8c4868e6087f3e332",
+         intel: "f79c9613058667fb99eee84bda35a4de4b6959d7549db034b38c223b519ad5c8"
 
   url "https://github.com/glmn-ai/neurosquad-releases/releases/download/v#{version}/NeuroSquad-#{version}-#{arch}.zip",
       verified: "github.com/glmn-ai/neurosquad-releases/"
@@ -35,10 +35,12 @@ cask "neurosquad" do
 
   app "NeuroSquad.app"
 
-  # Not notarized (no Apple Developer ID; signed with our own self-signed
-  # certificate): without this, Gatekeeper would call the quarantined download
-  # "damaged". Homebrew 5 dropped `--no-quarantine` and disables such casks in
-  # its main repository, which is why this lives in our own tap.
+  # Since 0.1.218 the app is Developer ID-signed and notarized, so Gatekeeper
+  # accepts it even quarantined (it would only ask the usual "downloaded from
+  # the Internet — Open?" once). Removing the flag keeps a Homebrew install
+  # opening with no prompt at all, as before. It was required for 0.1.214
+  # (self-signed, not notarized) — Homebrew 5 dropped `--no-quarantine` and
+  # disables such casks in its main repository, hence our own tap.
   postflight do
     system_command "/usr/bin/xattr",
                    args: ["-dr", "com.apple.quarantine", "#{appdir}/NeuroSquad.app"],
