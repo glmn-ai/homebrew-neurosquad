@@ -6,17 +6,13 @@
 brew install --cask glmn-ai/neurosquad/neurosquad
 ```
 
-**Available after the first macOS release.** Until then the cask is disabled
-and `brew install` says so; use the download page instead:
-<https://neurosquad.ai/download>.
-
 ## Notes
 
-- The app is signed with NeuroSquad's own certificate but **not notarized by
-  Apple**. The cask removes the quarantine flag from the installed
-  `NeuroSquad.app` after installing it, so macOS opens it without the
-  "damaged" / "unidentified developer" dialog. This is why NeuroSquad lives in
-  its own tap and not in the main Homebrew cask repository.
+- Since version 0.1.218 the app is signed with an Apple Developer ID and
+  notarized by Apple. The cask also removes the quarantine flag from the
+  installed `NeuroSquad.app`, so it opens without even macOS's one-time
+  "downloaded from the Internet" question. (Earlier builds were not notarized,
+  which is why NeuroSquad has its own tap.)
 - NeuroSquad updates itself (`auto_updates true`), so `brew upgrade` skips it
   unless you pass `--greedy`.
 - `brew uninstall --zap --cask neurosquad` also removes its settings and data
