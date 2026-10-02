@@ -14,9 +14,9 @@
 cask "neurosquad" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.1.218"
-  sha256 arm:   "bbbfd81f0c2bf3e896c71edeba174f41238e642ee11d44c8c4868e6087f3e332",
-         intel: "f79c9613058667fb99eee84bda35a4de4b6959d7549db034b38c223b519ad5c8"
+  version "0.1.222"
+  sha256 arm:   "b00e22f5752681f0b3bd8626f9af88f32afa4c5dd85a4605ebdd99324cd0d169",
+         intel: "29ccc38d1ce3c30b1a9d87ad5573aaf2e8a00b82432a69c3cf22e627e65dba21"
 
   url "https://github.com/glmn-ai/neurosquad-releases/releases/download/v#{version}/NeuroSquad-#{version}-#{arch}.zip",
       verified: "github.com/glmn-ai/neurosquad-releases/"
