@@ -1,8 +1,8 @@
 class NeurosquadCli < Formula
   desc "Run several AI coding agents in your terminal and get called when one needs you"
   homepage "https://github.com/glmn-ai/neurosquad-cli"
-  url "https://registry.npmjs.org/neurosquad/-/neurosquad-0.1.0.tgz"
-  sha256 "7e3a2e3e055b29506fd36f8d803d218d7402b5f27072473c2989d6298daf418c"
+  url "https://registry.npmjs.org/neurosquad/-/neurosquad-0.2.0.tgz"
+  sha256 "0433d0cb8d1c3ce9fec1ff9735a823f4bbba8309962923404163b337d0e273fb"
   license "MIT"
 
   livecheck do
